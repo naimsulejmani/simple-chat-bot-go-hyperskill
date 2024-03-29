@@ -1,0 +1,30 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\n// getData() asks the user to input the\
+    \ `amount` of money, then the `interestRate`\n// and last the `numberOfYears`\
+    \ and then returns those three variables\nfunc getData() (float64, float64, float64)\
+    \ {\n\tvar amount, interestRate, numberOfYears float64\n\n\tfmt.Scanln(?)  //\
+    \ Read the `amount` of money first\n\tfmt.Scanln(?)  // Read the `interestRate`\
+    \ second\n\tfmt.Scanln(?)  // Read the `numberOfYears` last\n\n\treturn amount,\
+    \ interestRate, numberOfYears\n}\n\n// calculateSimpleInterest() takes as arguments\
+    \ the `amount`, `interestRate` and `numberOfYears` \n// and uses the formula from\
+    \ the problem statement to calculate the `simpleInterest`\n// nolint: gomnd //\
+    \ <-- DO NOT delete!\nfunc calculateSimpleInterest(?, ?, ? float64) float64 {\n\
+    \tsimpleInterest := ?\n\treturn simpleInterest\n}\n\n// printResult() prints the\
+    \ calculated `simpleInterest` and `totalAmount`\n// With two decimal places using\
+    \ fmt.Printf() with the `%.2f` format specifier\nfunc printResult(?, ? float64)\
+    \ {\n\tfmt.Printf(\"The simple interest is %.2f\\n\", ?)\n\tfmt.Printf(\"?\",\
+    \ totalAmount)\n}\n\n// DO NOT delete or modify the contents of the main() function!\n\
+    func main() {\n\tamount, interestRate, numberOfYears := getData()\n\tsimpleInterest\
+    \ := calculateSimpleInterest(amount, interestRate, numberOfYears)\n\tprintResult(simpleInterest,\
+    \ amount+simpleInterest)\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23516#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 22:09:33 UTC"
+record: -1
+submission_language: go

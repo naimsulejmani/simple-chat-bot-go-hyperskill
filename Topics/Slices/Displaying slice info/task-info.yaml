@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // DO NOT delete or\
+    \ modify the code block below:\n    var length, capacity int\n\tfmt.Scanln(&length,\
+    \ &capacity)\n\tnumbers := make([]int, length, capacity)\n\n    // Write the code\
+    \ below to print the `numbers` slice len(), cap(), and its elements:\n\tfmt.Printf(\"\
+    len=%d cap=%d elements=%v\", ?, ?, ?)\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24892#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 20:12:40 UTC"
+record: -1
+submission_language: go

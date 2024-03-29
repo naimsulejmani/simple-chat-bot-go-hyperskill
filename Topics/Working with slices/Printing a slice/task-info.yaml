@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // DO NOT delete or\
+    \ modify the code block below!\n\tvar num1, num2, num3 int\n\tfmt.Scanln(&num1,\
+    \ &num2, &num3)\n\tintSlice := []int{num1, num2, num3}\n\n    // Write the code\
+    \ to multiply each element of `intSlice` by 2\n\t// And then print each multiplied\
+    \ element on a new line here or below this comment:\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15939#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 21:04:08 UTC"
+record: -1
+submission_language: go

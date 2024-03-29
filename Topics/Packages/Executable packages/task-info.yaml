@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: The package name must be <code>main</code>;
+  - text: The code that will be executed must be contained inside a function named <code>init()</code>;
+  - text: The package must be an internal package for us to be able to execute it;
+  - text: The code that will be executed must be contained inside a function named <code>main()</code>;
+files:
+  - name: main.go
+    visible: true
+    text: |+
+      // You can experiment here, it won’t be checked
+    
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15910#comment
+status: Solved
+record: -1
+local_check: false

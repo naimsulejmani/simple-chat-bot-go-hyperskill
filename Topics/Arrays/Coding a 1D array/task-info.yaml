@@ -1,0 +1,15 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // Create the array\
+    \ of 10 elements and assign 54 to its [4] element below:\n\tarray := ?\n\n   \
+    \ // DO NOT delete, this line prints the array!\n\tfmt.Println(array)\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14877#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 27 Mar 2024 21:25:32 UTC"
+record: -1
+submission_language: go

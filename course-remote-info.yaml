@@ -1,0 +1,66 @@
+hyperskill_project:
+  id: 206
+  ide_files: https://cogniterra.org/media/attachments/lesson/25874/additional_files.json
+  is_template_based: true
+  use_ide: true
+update_date: "Fri, 29 Mar 2024 19:28:31 UTC"
+stages:
+  - id: 1027
+    step: 15498
+    is_completed: true
+  - id: 1028
+    step: 15499
+    is_completed: true
+  - id: 1029
+    step: 15500
+    is_completed: true
+  - id: 1030
+    step: 15501
+    is_completed: true
+  - id: 1031
+    step: 15502
+    is_completed: false
+topics:
+  0:
+    - title: Introduction to Go
+      theory_id: 17073
+    - title: Comments
+      theory_id: 16689
+    - title: Variables and constants
+      theory_id: 14468
+    - title: Packages
+      theory_id: 15906
+    - title: GoLand
+      theory_id: 19072
+    - title: Input/Output
+      theory_id: 14527
+  1:
+    - title: Primitive types
+      theory_id: 16871
+    - title: Strings
+      theory_id: 15412
+  2:
+    - title: Arithmetic operations
+      theory_id: 16679
+    - title: String formatting
+      theory_id: 16860
+  3:
+    - title: Control statements
+      theory_id: 16235
+    - title: Loops
+      theory_id: 14707
+  4:
+    - title: Pointers
+      theory_id: 15463
+    - title: Functions
+      theory_id: 16388
+    - title: Functional decomposition
+      theory_id: 17506
+    - title: Arrays
+      theory_id: 14871
+    - title: Slices
+      theory_id: 15656
+    - title: Working with slices
+      theory_id: 15935
+    - title: Slice expressions
+      theory_id: 20411

@@ -1,0 +1,20 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\n// calculateHalf prints the result divided\
+    \ by 2\nfunc ? (? ?) {\n    fmt.Println(\"The result is\", ?)\n}\n\n// halfSum\
+    \ sums a and b and then calls calculateHalf to print the result divided by 2\n\
+    func halfSum(a int, b int) {\n\tcalculateHalf(a + b)\n}\n\n// halfDifference subtracts\
+    \ b from a then calls calculateHalf to print the result divided by 2\nfunc halfDifference(a\
+    \ int, b int) {\n\tcalculateHalf(a - b)\n}\n\n// DO NOT delete or modify the code\
+    \ within the main function!\nfunc main() {\n\tvar a,b int\n    fmt.Scanln(&a,\
+    \ &b)\n    halfSum(a, b)\n    halfDifference(a, b)\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17513#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 22:11:57 UTC"
+record: -1
+submission_language: go

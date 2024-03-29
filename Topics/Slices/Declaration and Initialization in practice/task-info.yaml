@@ -1,0 +1,15 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"    \n\nfunc main() {\n\tvar a, b, c int\n\t\
+    fmt.Scanln(&a, &b, &c)\n\n\t// Create intSlice containing the a, b and c variables\
+    \ below:\n\tintSlice := ?\n\n\tfmt.Println(?) // print intSlice here!\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15661#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 20:14:16 UTC"
+record: -1
+submission_language: go

@@ -1,0 +1,19 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\nfunc f(x int) int {\n    if ??? {\n   \
+    \     return f1(x)\n    } \n    return f2(x)\n}\n\n// nolint: gomnd // <- DO NOT\
+    \ delete this comment!\nfunc f1(x int) int {\n    // your code here\n}\n\n// nolint:\
+    \ gomnd // <- DO NOT delete this comment!\nfunc f2(x int) int {\n    // your code\
+    \ here\n}\n\n// DO NOT delete or modify the contents of the main function!\nfunc\
+    \ main() {\n\tvar n int\n    fmt.Scanln(&n)\n\n    result := f(n)\n    fmt.Println(result)\n\
+    }"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17512#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 22:05:09 UTC"
+record: -1
+submission_language: go

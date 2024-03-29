@@ -1,0 +1,138 @@
+<h2>Packages</h2>
+<div class="step-text">
+<p>Go is a language that encourages good software engineering practices. An important part of high-quality software is code reuse, applying the DRY principle – Don't Repeat Yourself. Enter Go packages, the next step into code reusability.</p>
+<h5 id="what-is-a-package">What is a package?</h5>
+<p>In the most basic terms, a Go <strong>package</strong> is a directory in your project containing one or more Go source files, or even other nested Go packages. The main purpose of a package is to help you organize related source files together into a single unit, making them reusable and maintainable.</p>
+<p>Every Go source file belongs to a package; that's why every Go file starts with a <strong>package declaration</strong>:</p>
+<pre><code class="language-go">package packagename</code></pre>
+<p>Any variable, type, or function within the source file belongs to its declared package, and other source files within the same package can access it.</p>
+<p>Go source files that exist in the same directory must belong to the same package. Even though it is not required for a package to be named after its containing directory, it is a recommended convention to follow.</p>
+<h5 id="importing-a-package">Importing a package</h5>
+<p>One of the most used built-in Go packages is <code class="language-go">fmt</code> that provides I/O functionalities. To use this package in your code, you can import it below the package declaration as follows:</p>
+<pre><code class="language-go">package packagename
+
+import "fmt"</code></pre>
+<p>Upon importing the <code class="language-go">fmt</code> package, you have access to the functions exported by the package. You can access these functions using the dot <code class="language-go">.</code> operator, for example, <code class="language-go">fmt.Println()</code> or <code class="language-go">fmt.Scanf()</code>.</p>
+<p>Often, you will need to use more than one package in your program. You can import more than one package by using the following syntax:</p>
+<pre><code class="language-go">import (
+    "fmt"
+    "math"
+    "strings"
+)</code></pre>
+<p>In rare cases, such as when debugging unfinished code, you might have some unused packages in your code. To avoid a compiler error, you can use a blank <code class="language-go">_</code> identifier before the name of the package. For example:</p>
+<pre><code class="language-go">import (
+    "fmt"
+    "math"
+    _ "os"
+    "strings"
+)</code></pre>
+<p>Another use of the special blank identifier is to trigger the initialization <code class="language-go">init()</code> function in some packages. For example, when working with database drivers, you can use a blank import to trigger the <code class="language-go">init()</code> function and give the package the necessary data required to work with the database. Look at the example below when using Go to connect to a PostgreSQL database:</p>
+<pre><code class="language-go">import (
+    "database/sql" // imports the Go database/sql package
+    
+    _ "github.com/lib/pq" // imports the PostgreSQL sql drivers that the database/sql package requires
+)
+</code></pre>
+<p>Inside the <code class="language-go">github.com/lib/pq</code> package, the <em>conn.go</em> file contains the <code class="language-go">init()</code> function. In simple terms, this will pass the necessary data to the <code class="language-go">database/sql</code> package in your main package so that it can work with a PostgreSQL database:</p>
+<pre><code class="language-go">func init() {
+    // when initialized with the blank "_" import, init() passes the necessary data
+    // to the database/sql package in your main package so that it can work with PostgreDB
+    sql.Register("postgres", &amp;Driver{})  
+}
+</code></pre>
+<p>Another type of special import is the dot <code class="language-go">.</code> import. It imports the package into the same namespace as the current package, so there is no need to use the imported package's name to access its functions. For example:</p>
+<pre><code class="language-go">import (
+    . "fmt"
+    . "math"
+)
+
+func main() {
+    // Outputs 5 to the console, you can use Println without fmt and Abs without math prefix
+    Println(Abs(-5))
+}
+</code></pre>
+<p>Finally, you can also import nested packages, for example:</p>
+<pre><code class="language-go">import "math/rand"</code></pre>
+<p>Here <code class="language-go">math</code> is the main package, and <code class="language-go">rand</code> is the nested package. In this case, you would only be able to use the functions within the <code class="language-go">rand</code> package, none of the <code class="language-go">math</code> package functionalities would be available unless you imported both <code class="language-go">math</code> and <code class="language-go">math/rand</code> packages.</p>
+<p></p><div class="alert alert-warning">As a good coding practice, remember only to import the packages you will use in your code! Otherwise, you will get the <code class="language-go">imported and not used</code> compilation error.</div>
+<h5 id="package-types">Package types</h5>
+<p>There are two types of packages in Go: <strong>executable</strong> and <strong>utility</strong>. An executable package holds an executable program for Go to compile and run. A utility package, in turn, is not self-executable; it just contains utility functions that can be used in an executable package. Examples of utility packages are <code class="language-go">fmt</code>, <code class="language-go">os</code>, <code class="language-go">math</code>, etc.</p>
+<p>A special executable package is the <code class="language-go">main</code> package. To create an executable package in Go, there are two requirements:</p>
+<ol>
+<li>
+<p>The name of the package must be <code class="language-go">main</code>.</p>
+</li>
+<li>
+<p>It should contain a function called <code class="language-go">main()</code>, which will be the starting point of your program.</p>
+</li>
+</ol>
+<p>Below you can see the contents of a source file <em>main.go</em> that exists within the <code class="language-go">main</code> package:</p>
+<pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Learning about packages!")
+}</code></pre>
+<h5 id="external-packages">External packages</h5>
+<p>You can also install <strong>external packages</strong> to your project using the <code class="language-go">go get</code> command. For example, let's try installing the <code class="language-go">fatih/color</code> package hosted on GitHub:</p>
+<pre><code class="language-bash">$ go get github.com/fatih/color</code></pre>
+<p></p><div class="alert alert-primary">
+<p>Starting from Go version 1.16, the <a href="https://go.dev/doc/go1.16#go-command" rel="noopener noreferrer nofollow" target="_blank">Module-aware mode is enabled by default</a>. So if you're using Go version 1.16+ and want to install external packages, you'll need to perform the following steps:</p>
+<ol>
+<li>
+<p>Initialize a <a href="https://go.dev/ref/mod#introduction" rel="noopener noreferrer nofollow" target="_blank">Go Module</a> in your project by executing the <code class="language-go">go mod init module-name</code> command in your terminal, e.g., <code class="language-go">go mod init example</code></p>
+</li>
+<br/>
+<li>
+<p>Then execute the <code class="language-go">go get package-name</code> command to install the external package, e.g., <code class="language-go">go get github.com/fatih/color</code></p>
+</li>
+<br/>
+<li>
+<p>Finally, execute the <code class="language-go">go mod tidy</code> command to add missing and remove unused modules in your project.</p></li></ol></div>
+<p>Now you can import the <code class="language-go">fatih/color</code> package in your <em>main.go</em> file:</p>
+<pre><code class="language-go">package main
+
+import "github.com/fatih/color"
+
+func main() {
+    // prints Hello Hyperskill in red font color
+    color.Red("Hello Hyperskill!") 
+}</code></pre>
+<p>After executing <code class="language-go">go run main.go</code> you will see the following <span style="color: #ff4363;">red-colored </span>output in your terminal:</p>
+<pre><span style="color: #ff4363;">Hello Hyperskill!</span></pre>
+<h5 id="internal-packages">Internal packages</h5>
+<p>Last but not least, you can also create an <strong>internal package</strong>. Internal packages are special because they have to reside within the directory named <em>internal</em> in your project.</p>
+<p>The <code class="language-go">go</code> tool recognizes this <em>internal</em> directory and prevents the package it contains from being imported by any package that doesn't share the same parent directory or is not a subdirectory of this parent directory.</p>
+<p>For example, let's look at the structure of the <em>example </em>directory that contains a nested internal package:</p>
+<pre><code class="language-bash">.
+├───calculator
+│   │   calculator.go
+│   │
+│   └───internal
+│           modulo.go
+│
+└───main
+        main.go</code></pre>
+<p>The internal package <code class="language-go">example/calculator/internal</code> can be imported by the code within <em>calculator.go</em> or any other Go source files within the <em>example/calculator</em> directory and its subdirectories because they share the common parent directory, <em>example/calculator</em>.</p>
+<p>However, if you tried to import the <code class="language-go">example/calculator/internal</code> package from the <code class="language-go">main</code> package that resides in the <em>example/main</em> directory, you would get the following compilation error:</p>
+<pre><code class="language-go">use of internal package example/calculator/internal not allowed</code></pre>
+<p>This happens because the <em>example/main</em> directory and the <em>example/calculator/internal</em> directory do NOT share the common parent directory, <em>example/calculator</em>.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>Let's briefly remember what you've learned on this topic:</p>
+<ul>
+<li>
+<p>A Go package is just a directory that contains related Go source files;</p>
+</li>
+<li>
+<p>There are two types of packages in Go: utility and executable packages. Utility packages are not self-executable; they just contain functions that can be used by the executable <code class="language-go">main</code> package, which is the entry point of your program;</p>
+</li>
+<li>
+<p>You can install external packages to your project via the <code class="language-go">go get</code> command;</p>
+</li>
+<li>
+<p>Internal packages are a special type of package that should always reside within a directory named <em>internal</em>. Remember that internal packages can be imported only by packages that reside within the same parent directory as the internal package or its subdirectories.</p>
+</li>
+</ul>
+<p>Wow! This was a long topic, but there is more work to do... let's do some exercises now to test your knowledge about packages!</p>
+</div>

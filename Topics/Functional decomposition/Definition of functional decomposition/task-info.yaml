@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "In functional decomposition, the problem is divided into several smaller\
+    \ problems."
+  - text: ' Functional decomposition helps us test every function more conveniently.'
+  - text: Applying functional decomposition makes our code harder to extend.
+  - text: 'Functional decomposition makes our code harder to read. '
+files:
+  - name: main.go
+    visible: true
+    text: |+
+      // You can experiment here, it won’t be checked
+    
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17509#comment
+status: Solved
+record: -1
+local_check: false

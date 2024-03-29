@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n\twords := []string{\"saltwater\"\
+    , \"backstage\", \"bedrock\", \"sandcastle\", \"snowman\"}\n\n\tw1 := words[0][?]\n\
+    \tw2 := words[1][?]\n\tw3 := words[2][?]\n\tw4 := words[3][?]\n\tw5 := words[4][?]\n\
+    \n\tfmt.Println(w1, w2, w3, w4, w5) // DO NOT delete this line, it prints the\
+    \ substrings!\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20420#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 21:26:53 UTC"
+record: -1
+submission_language: go

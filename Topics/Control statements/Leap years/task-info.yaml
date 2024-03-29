@@ -1,0 +1,27 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: |-
+      package main
+      
+      import "fmt"
+      
+      func main() {
+          var year int
+          fmt.Scanln(&year)
+      
+          if year%? == ? && year%? != ? || year%? == ? {
+              ?
+          } else {
+              ?
+          }
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23470#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 27 Mar 2024 20:33:56 UTC"
+record: -1
+submission_language: go

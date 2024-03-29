@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport (\n\t// write the missing imports here\n)\n\nconst\
+    \ ToRadians = math.Pi / 180\n\nfunc main() {\n    // just add the missing prefixes\
+    \ to the functions below.\n\tvar angle float64\n\tfmt.Scanf(\"%f\", &angle)\n\n\
+    \tangle *= ToRadians // do not modify this line, it converts the angle to radians\n\
+    \n\tPrintln(Sin(angle) - math.Cos(angle))\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15913#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 27 Mar 2024 20:09:54 UTC"
+record: -1
+submission_language: go

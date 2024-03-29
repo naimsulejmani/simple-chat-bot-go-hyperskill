@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: <pre><code class="language-go"> import (<br>     "math"<br>     "os"<br> )
+      </code></pre>
+  - text: <pre><code class="language-go"> import (<br>     * "fmt"<br>     * "strings"<br>
+      ) </code></pre>
+  - text: <pre><code class="language-go"> import . "fmt" </code></pre>
+  - text: <pre><code class="language-go"> import (<br>     "database\sql"<br>     "math\cmplx"<br>     "fmt\scanf"<br>
+      ) </code></pre>
+  - text: <pre><code class="language-go"> import (<br>     . "database/sql"<br>     _
+      "github.com/go-sql-driver/mysql"<br> ) </code></pre>
+  - text: <pre><code class="language-go"> import (<br>     . "fmt"<br>     . "strings"<br>
+      ) </code></pre>
+files:
+  - name: main.go
+    visible: true
+    text: |+
+      // You can experiment here, it won’t be checked
+    
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15907#comment
+status: Solved
+record: -1
+local_check: false

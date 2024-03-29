@@ -1,0 +1,19 @@
+type: code
+files:
+  - name: main.go
+    visible: true
+    text: "package main\n\nimport \"fmt\"\n\n// Update the function's signature of getRectangleData()\
+    \ below:\nfunc getRectangleData(?) (?) {\n\tarea := length * width\n\tperimeter\
+    \ := 2 * (length + width)\n\n\treturn area, perimeter\n}\n\n// DO NOT delete or\
+    \ modify the contents within the main function.\nfunc main() {\n\tvar length,\
+    \ width float64\n\tfmt.Scanln(&length, &width)\n\n\tarea, perimeter := getRectangleData(length,\
+    \ width)\n    fmt.Println(\"The area of the rectangle is:\", area)\n    fmt.Println(\"\
+    The perimeter of the rectangle is:\", perimeter)\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23446#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 29 Mar 2024 21:54:02 UTC"
+record: -1
+submission_language: go
